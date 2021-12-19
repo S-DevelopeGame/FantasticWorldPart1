@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
 
     public void aboutScene()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("GameTutorial");
     }
 
     public void backScene()

@@ -57,10 +57,10 @@ public class Patroller: MonoBehaviour {
     }
 
     private void FaceDestination() {
-        Vector3 directionToDestination = (navMeshAgent.destination - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToDestination.x, 0, directionToDestination.z));
+        //Vector3 directionToDestination = (navMeshAgent.destination - transform.position).normalized;
+        //Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToDestination.x, 0, directionToDestination.z));
         //transform.rotation = lookRotation; // Immediate rotation
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed); // Gradual rotation
+        //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed); // Gradual rotation
     }
 
 

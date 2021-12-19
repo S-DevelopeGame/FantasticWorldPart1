@@ -42,7 +42,7 @@ public class EnemyController3: MonoBehaviour {
         //Debug.Log("distanceToTarget = " + distanceToTarget);
 
         if (distanceToTarget <= radiusToWatch) {
-            //Chase();
+            Chase();
         } else if (rotator.enabled) {
             if (Random.Range(0f,1f) < probabilityToStopRotating*Time.deltaTime) {
                 Patrol();
