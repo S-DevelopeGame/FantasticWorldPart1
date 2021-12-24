@@ -6,18 +6,20 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private string worldScene;
+    [SerializeField] private string tutorialScene;
+    [SerializeField] private string multiPlayerScene;
 
-    public void endLevel()
+    public void moveEndLevel()
     {
         SceneManager.LoadScene(worldScene);
     }
 
-    public void exitGame()
+    public void moveExitGame()
     {
         Application.Quit();
     }
 
-    public void nextScene()
+    public void moveNextScene()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         if (SceneManager.sceneCountInBuildSettings > nextSceneIndex)
@@ -26,12 +28,17 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void aboutScene()
+    public void moveTutorialScene()
     {
-        SceneManager.LoadScene("GameTutorial");
+        SceneManager.LoadScene(tutorialScene);
     }
 
-    public void backScene()
+    public void moveMultiPlayerScene()
+    {
+        SceneManager.LoadScene(multiPlayerScene);
+    }
+
+    public void moveBackScene()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex - 1;
         

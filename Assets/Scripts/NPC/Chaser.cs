@@ -50,7 +50,7 @@ public class Chaser : MonoBehaviour
     {
         Vector3 direction = (playerPosition - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        // transform.rotation = lookRotation;
+        transform.rotation = lookRotation;
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5);
     }
 
@@ -63,7 +63,7 @@ public class Chaser : MonoBehaviour
     {
         Vector3 direction = (navMeshAgent.destination - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        // transform.rotation = lookRotation;
+        transform.rotation = lookRotation;
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5);
     }
 

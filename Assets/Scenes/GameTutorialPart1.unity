@@ -1233,7 +1233,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f84080c266d5f49987a9358ed6abc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldScene: WorldMap
+  worldScene: GameTutorialPart2
+  tutorialScene: 
+  multiPlayerScene: 
 --- !u!4 &150235371
 Transform:
   m_ObjectHideFlags: 0
@@ -2118,7 +2120,7 @@ PrefabInstance:
     - target: {fileID: 3915521456863412617, guid: 027e56926d3a53147a309259da447bf8, type: 3}
       propertyPath: imageObject
       value: 
-      objectReference: {fileID: 21300000, guid: 711db04402aa2124f89e11fef9a41070, type: 3}
+      objectReference: {fileID: 21300000, guid: ce839b4439df49d4994cdbee335db494, type: 3}
     - target: {fileID: 7915838365970449494, guid: 027e56926d3a53147a309259da447bf8, type: 3}
       propertyPath: m_Name
       value: banana (1)

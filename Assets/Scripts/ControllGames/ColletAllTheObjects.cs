@@ -17,7 +17,7 @@ public class ColletAllTheObjects : MonoBehaviour
     {
 
         if (theAllObjects.childCount == 0 && handPlayer.childCount == 0)
-            gameController.endLevel();
+            gameController.moveEndLevel();
             
     }
 }

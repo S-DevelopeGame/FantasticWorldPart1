@@ -1233,7 +1233,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f84080c266d5f49987a9358ed6abc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldScene: WorldMap
+  worldScene: MainMenu
+  tutorialScene: 
+  multiPlayerScene: 
 --- !u!4 &150235371
 Transform:
   m_ObjectHideFlags: 0
@@ -7689,6 +7691,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197098192}
     m_Modifications:
+    - target: {fileID: 2588477588666687257, guid: 6b8d1c692426a6b40866aa45e9c44c90, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8997412
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588477588666687257, guid: 6b8d1c692426a6b40866aa45e9c44c90, type: 3}
+      propertyPath: m_Center.y
+      value: 0.88074243
+      objectReference: {fileID: 0}
     - target: {fileID: 2622968388997211250, guid: 6b8d1c692426a6b40866aa45e9c44c90, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -7699,7 +7709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2622968388997211250, guid: 6b8d1c692426a6b40866aa45e9c44c90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.52463174
+      value: 0.779
       objectReference: {fileID: 0}
     - target: {fileID: 2622968388997211250, guid: 6b8d1c692426a6b40866aa45e9c44c90, type: 3}
       propertyPath: m_LocalPosition.z

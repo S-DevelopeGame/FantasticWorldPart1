@@ -176,10 +176,8 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
         m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
         m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
-        
-        transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
-        transform.position += transform.right * m_currentH * m_moveSpeed * Time.deltaTime;
-        
+        m_rigidBody.velocity = transform.forward * m_currentV * m_moveSpeed + transform.right * m_currentH * m_moveSpeed + transform.up*m_rigidBody.velocity.y;
+     
         m_animator.SetBool("PickUp", false);
       
             
