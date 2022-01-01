@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecycleBinManager : MonoBehaviour
+public class RecycleBinManager
 {
     // Start is called before the first frame update
     private static Vector3 openRecycleBinPosition;

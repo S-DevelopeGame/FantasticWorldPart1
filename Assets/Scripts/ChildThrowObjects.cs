@@ -9,6 +9,7 @@ public class ChildThrowObjects : MonoBehaviour
     [Tooltip("Minimum time between consecutive spawns, in seconds")] [SerializeField] float minTimeBetweenSpawns = 1f;
     [Tooltip("Maximum time between consecutive spawns, in seconds")] [SerializeField] float maxTimeBetweenSpawns = 3f;
     [Tooltip("Maximum distance in X between spawner and spawned objects, in meters")] [SerializeField] float maxXDistance = 0.5f;
+    [Tooltip("Maximum distance in X between spawner and spawned objects, in meters")] [SerializeField] float maxYDistance = 0.5f;
     [SerializeField] private Transform objectsOfLevel;
     void Start()
     {
@@ -17,16 +18,21 @@ public class ChildThrowObjects : MonoBehaviour
 
     private IEnumerator SpawnRoutine()
     {
-        while (true)
+        while (true && this.enabled)
         {
+            
             float timeBetweenSpawns = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
             yield return new WaitForSeconds(timeBetweenSpawns);
             Vector3 positionOfSpawnedObject = new Vector3(
                 transform.position.x + Random.Range(-maxXDistance, +maxXDistance),
-                transform.position.y,
+                transform.position.y + maxYDistance,
                 transform.position.z + Random.Range(-maxXDistance, +maxXDistance));
-            GameObject newObject = Instantiate(prefabToSpawn[Random.Range(0,4)].gameObject, positionOfSpawnedObject, Quaternion.identity);
-            newObject.transform.parent = objectsOfLevel;
+            if(this.enabled)
+            {
+                GameObject newObject = Instantiate(prefabToSpawn[Random.Range(0, 4)].gameObject, positionOfSpawnedObject, Quaternion.identity);
+                newObject.transform.parent = objectsOfLevel;
+            }
+            
             
         }
     }

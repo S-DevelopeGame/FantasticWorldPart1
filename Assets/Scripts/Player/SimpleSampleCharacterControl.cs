@@ -44,7 +44,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private bool m_jumpInput = false;
 
     private bool m_isGrounded;
-
+    [SerializeField] private GameObject hand;
     [SerializeField] private List<Collider> m_collisions = new List<Collider>();
 
     private void Awake()
@@ -55,23 +55,42 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        ContactPoint[] contactPoints = collision.contacts;
-        for (int i = 0; i < contactPoints.Length; i++)
+        if (collision.collider.tag == "pickup" && hand.transform.childCount == 0)
         {
-            if (Vector3.Dot(contactPoints[i].normal, Vector3.up) > 0.5f)
-            {
-                if (!m_collisions.Contains(collision.collider))
-                {
-                    m_collisions.Add(collision.collider);
-                }
-                m_isGrounded = true;
-            }
+            return;
         }
-        if (m_collisions.Count > 1) { m_collisions.Remove(m_collisions[0]); }
+        ContactPoint[] contactPoints = collision.contacts;
+
+       
+        
+            for (int i = 0; i < contactPoints.Length; i++)
+            {
+                if (Vector3.Dot(contactPoints[i].normal, Vector3.up) > 0.5f)
+                {
+                    if (!m_collisions.Contains(collision.collider))
+                    {
+                        m_collisions.Add(collision.collider);
+                    }
+                    m_isGrounded = true;
+                }
+            }
+        
+        
+        /*
+        if (hand.transform.childCount > 0 && m_collisions.Count > 0)
+        {
+            if(m_collisions[0].gameObject == hand.transform.GetChild(0).gameObject)
+                m_collisions.Remove(m_collisions[0]);
+        }
+        */
     }
 
     private void OnCollisionStay(Collision collision)
     {
+        if (collision.collider.tag == "pickup" && hand.transform.childCount == 0)
+        {
+            return;
+        }
         ContactPoint[] contactPoints = collision.contacts;
         bool validSurfaceNormal = false;
         for (int i = 0; i < contactPoints.Length; i++)
@@ -98,18 +117,36 @@ public class SimpleSampleCharacterControl : MonoBehaviour
             }
             if (m_collisions.Count == 0) { m_isGrounded = false; }
         }
-        if (m_collisions.Count > 1) { m_collisions.Remove(m_collisions[0]); }
+        //if (m_collisions.Count > 1) { m_collisions.Remove(m_collisions[0]); }
+        /*
+        if (hand.transform.childCount > 0 && m_collisions.Count > 0)
+        {
+            if (m_collisions[0].gameObject == hand.transform.GetChild(0).gameObject)
+                m_collisions.Remove(m_collisions[0]);
+        }
+        */
     }
 
     private void OnCollisionExit(Collision collision)
     {
+        if (collision.collider.tag == "pickup" && hand.transform.childCount == 0)
+        {
+            return;
+        }
         if (m_collisions.Contains(collision.collider))
         {
             m_collisions.Remove(collision.collider);
         }
         if (m_collisions.Count == 0) { m_isGrounded = false; }
-        if (m_collisions.Count > 1) { m_collisions.Remove(m_collisions[0]); }
-            
+        //if (m_collisions.Count > 1) { m_collisions.Remove(m_collisions[0]); }
+        /*
+        if (hand.transform.childCount > 0 && m_collisions.Count>0)
+        {
+            if (m_collisions[0].gameObject == hand.transform.GetChild(0).gameObject)
+                m_collisions.Remove(m_collisions[0]);
+        }
+        */
+
     }
 
     private void Update()

@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8649955a53a40b74389a13fe2647c118, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -425,7 +425,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487717613}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: nextScene
+        m_MethodName: moveNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -796,6 +796,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldScene: 
+  tutorialScene: 
+  multiPlayerScene: 
 --- !u!1 &1626282312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1017,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487717613}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: nextScene
+        m_MethodName: moveNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

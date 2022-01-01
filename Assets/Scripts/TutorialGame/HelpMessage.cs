@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,10 +15,13 @@ public class HelpMessage : MonoBehaviour
 
     [SerializeField] private string[] messages;
     [SerializeField] private string[] titles;
+    
+    [SerializeField] private TextScene textScene;
     private int count;
 
     private void Start()
     {
+        Debug.Log("shalom\n sss");
         count = 0;
         titleMessage.text = titles[count];
         message.text = messages[count++];
@@ -27,6 +31,7 @@ public class HelpMessage : MonoBehaviour
     {
         count = 0;
         titleMessage.text = titles[count];
+
         message.text = messages[count++];
         image.gameObject.SetActive(true);
     }
@@ -37,6 +42,8 @@ public class HelpMessage : MonoBehaviour
         {
             image.gameObject.SetActive(false);
             count = 0;
+            if(textScene!=null)
+                textScene.getTextScene();
         }
         else
         {

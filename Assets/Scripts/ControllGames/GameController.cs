@@ -2,13 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] private string worldScene;
     [SerializeField] private string tutorialScene;
     [SerializeField] private string multiPlayerScene;
+    [SerializeField] private static float speedMouse;
 
+    private void Start()
+    {
+        
+            
+    }
     public void moveEndLevel()
     {
         SceneManager.LoadScene(worldScene);
@@ -46,5 +53,11 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene(nextSceneIndex);
         
     }
+
+
+
+
+
+
 
 }

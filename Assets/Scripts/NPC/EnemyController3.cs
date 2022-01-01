@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 /**
  * This component patrols between given points, chases a given target object when it sees it, and rotates from time to time.
@@ -11,13 +12,24 @@ public class EnemyController3: MonoBehaviour {
     [SerializeField] float probabilityToRotate = 0.2f;
     [SerializeField] float probabilityToStopRotating = 0.2f;
 
+    [SerializeField] private Image imageTalkChild;
+    private bool talkWithChild;
     private Chaser chaser;
     private Patroller patroller;
     private Rotator rotator;
 
     private void Chase() {
+        if (imageTalkChild.gameObject.activeSelf)
+        {
+            talkWithChild = true;
+        }
+
         chaser.enabled = true;
         patroller.enabled = rotator.enabled = false;
+ 
+
+
+
     }
 
     private void Patrol() {
@@ -41,7 +53,7 @@ public class EnemyController3: MonoBehaviour {
         float distanceToTarget = Vector3.Distance(transform.position, chaser.TargetObjectPosition());
         //Debug.Log("distanceToTarget = " + distanceToTarget);
 
-        if (distanceToTarget <= radiusToWatch) {
+        if (distanceToTarget <= radiusToWatch && !talkWithChild) {
             Chase();
         } else if (rotator.enabled) {
             if (Random.Range(0f,1f) < probabilityToStopRotating*Time.deltaTime) {

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.AI;
 
 
@@ -22,25 +23,32 @@ public class Patroller: MonoBehaviour {
     [Header("For debugging")]
     [SerializeField] private Target currentTarget = null;
     [SerializeField] private float timeToWaitAtTarget = 0;
+    [SerializeField] private float WalkingSpeed;
 
+    private const float walkingSpeedAnimation = 0.33f;
+    private Animator animator;
     private NavMeshAgent navMeshAgent;
-    //private Animator animator;
     private float rotationSpeed = 5f;
-
+    
     private void Start() {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        //animator = GetComponent<Animator>();
-
+        animator = GetComponent<Animator>();
+        animator.SetBool("Grounded", true);
+        animator.SetFloat("MoveSpeed", walkingSpeedAnimation);
         allTargets = targetFolder.GetComponentsInChildren<Target>(false); // false = get components in active children only
         Debug.Log("Found " + allTargets.Length + " active targets.");
         SelectNewTarget();
+       
     }
 
     private void SelectNewTarget() {
         currentTarget = allTargets[Random.Range(0, allTargets.Length - 1)];
         Debug.Log("New target: " + currentTarget.name);
+        navMeshAgent.speed = walkingSpeedAnimation;
+        
         navMeshAgent.SetDestination(currentTarget.transform.position);
-        //if (animator) animator.SetBool("Run", true);
+        animator.SetFloat("MoveSpeed", walkingSpeedAnimation);
+        navMeshAgent.speed = WalkingSpeed;
         timeToWaitAtTarget = Random.Range(minWaitAtTarget, maxWaitAtTarget);
     }
 
@@ -49,18 +57,23 @@ public class Patroller: MonoBehaviour {
         if (navMeshAgent.hasPath) {
             FaceDestination();
         } else {   // we are at the target
-            //if (animator) animator.SetBool("Run", false);
+            animator.SetFloat("MoveSpeed", 0);
             timeToWaitAtTarget -= Time.deltaTime;
             if (timeToWaitAtTarget <= 0)
                 SelectNewTarget();
         }
     }
 
+    private void FixedUpdate()
+    {
+        //animator.SetBool("Grounded", true);
+    }
+
     private void FaceDestination() {
-        //Vector3 directionToDestination = (navMeshAgent.destination - transform.position).normalized;
-        //Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToDestination.x, 0, directionToDestination.z));
-        //transform.rotation = lookRotation; // Immediate rotation
-        //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed); // Gradual rotation
+        Vector3 directionToDestination = (navMeshAgent.destination - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToDestination.x, 0, directionToDestination.z));
+        transform.rotation = lookRotation; // Immediate rotation
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed); // Gradual rotation
     }
 
 
