@@ -32,7 +32,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private float m_currentH = 0;
 
     private readonly float m_interpolation = 10;
-    private readonly float m_walkScale = 0.33f;
+    private readonly float m_walkScale = 1.5f;
     private readonly float m_backwardsWalkScale = 0.16f;
     private readonly float m_backwardRunScale = 0.66f;
 
@@ -46,12 +46,14 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private bool m_isGrounded;
     [SerializeField] private GameObject hand;
     [SerializeField] private List<Collider> m_collisions = new List<Collider>();
+    //[SerializeField] private GameObject menu;
 
     private void Awake()
     {
         if (!m_animator) { gameObject.GetComponent<Animator>(); }
         if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -151,6 +153,13 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     private void Update()
     {
+
+        //menu = GameObject.Find("MenuGamePlay").gameObject;
+        //if (Input.GetKeyDown(KeyCode.Escape))
+      //  {
+          //  menu.gameObject.SetActive(true);
+
+       // }
         if (!m_jumpInput && Input.GetKey(KeyCode.Space))
         {
             m_animator.SetBool("PickUp", false);
@@ -175,9 +184,11 @@ public class SimpleSampleCharacterControl : MonoBehaviour
                 break;
 
             case ControlMode.Tank:
-                if (imageTutorial == null)
+                if (imageTutorial == null && !OptionsGame.menuIsActive)
                     TankUpdate();
-                else if(!imageTutorial.IsActive())
+                else if(imageTutorial != null && !imageTutorial.IsActive() && !OptionsGame.menuIsActive)
+                    TankUpdate();
+                else if (!OptionsGame.menuIsActive)
                     TankUpdate();
                 break;
 

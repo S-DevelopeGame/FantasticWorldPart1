@@ -29,7 +29,8 @@ public class Patroller: MonoBehaviour {
     private Animator animator;
     private NavMeshAgent navMeshAgent;
     private float rotationSpeed = 5f;
-    
+    [SerializeField] private GameObject menu;
+
     private void Start() {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -54,6 +55,17 @@ public class Patroller: MonoBehaviour {
 
 
     private void Update() {
+        if(OptionsGame.menuIsActive)
+        {
+            navMeshAgent.speed = 0;
+            animator.SetFloat("MoveSpeed", 0);
+        }
+        else if(navMeshAgent.speed != WalkingSpeed && !OptionsGame.menuIsActive)
+        {
+            animator.SetFloat("MoveSpeed", walkingSpeedAnimation);
+            navMeshAgent.speed = WalkingSpeed;
+        }
+
         if (navMeshAgent.hasPath) {
             FaceDestination();
         } else {   // we are at the target

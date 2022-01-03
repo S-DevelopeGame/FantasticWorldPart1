@@ -11,6 +11,7 @@ public class TimerGame : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float timeLeft;
     [SerializeField] private string sceneName;
+    [SerializeField] private GameObject menu;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +22,13 @@ public class TimerGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        timerText.text = "Time: " + (timeLeft);
-        if (timeLeft < 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if(!menu.activeSelf)
+        {
+            timeLeft -= Time.deltaTime;
+            timerText.text = "Time: " + (timeLeft);
+            if (timeLeft < 0)
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        
     }
 }

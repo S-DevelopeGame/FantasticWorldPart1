@@ -26,6 +26,7 @@ public class Chaser : MonoBehaviour
 
     [SerializeField] private Image dialogImage1;
     [SerializeField] private Image dialogImage2;
+    [SerializeField] private GameObject menu;
 
     private Animator animator;
     private NavMeshAgent navMeshAgent;
@@ -50,9 +51,12 @@ public class Chaser : MonoBehaviour
         playerPosition = player.transform.position;
         float distanceToPlayer = Vector3.Distance(playerPosition, transform.position);
 
-        if (dialogImage1.gameObject.activeSelf || dialogImage2.gameObject.activeSelf)
+        if (dialogImage1.gameObject.activeSelf || dialogImage2.gameObject.activeSelf || OptionsGame.menuIsActive)
+        {
             navMeshAgent.speed = 0;
-        else if(runSpeed != navMeshAgent.speed)
+            animator.SetFloat("MoveSpeed", 0);
+        }  
+        else if(runSpeed != navMeshAgent.speed || !OptionsGame.menuIsActive)
         {
             navMeshAgent.speed = runSpeed;
             animator.SetFloat("MoveSpeed", runSpeed);
@@ -103,7 +107,7 @@ public class Chaser : MonoBehaviour
         {
             distance = Vector3.Distance(playerPosition, targets[i].transform.position);
             
-            if (distance > lastdistance && navMeshAgent.CalculatePath(targets[i].transform.position -new Vector3(1,0,1)* Mathf.Epsilon, navMeshAgent.path))
+            if (distance > lastdistance && (targetNavMesh(targets[i].transform.position, navMeshAgent.path)))
             {
                 lastdistance = distance;
                 ansTarget = targets[i];
@@ -116,6 +120,20 @@ public class Chaser : MonoBehaviour
         return ansTarget.transform.position;
     }
 
+
+    private bool targetNavMesh(Vector3 target, NavMeshPath path)
+    {
+        if (!navMeshAgent.CalculatePath(target + Vector3.forward, path))
+            return false;
+        if (!navMeshAgent.CalculatePath(target - Vector3.forward, path))
+            return false;
+        if (!navMeshAgent.CalculatePath(target + Vector3.right, path))
+            return false;
+        if (!navMeshAgent.CalculatePath(target - Vector3.right, path))
+            return false;
+
+        return true;
+    }
 
 
 

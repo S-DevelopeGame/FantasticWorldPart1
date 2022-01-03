@@ -8,13 +8,15 @@ using UnityEngine.UI;
 public class CursorHider : MonoBehaviour {
 
     [SerializeField] private Image dialogImage;
+    [SerializeField] private GameObject menu;
     void Start() {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        menu = GameObject.Find("MenuGamePlay").gameObject;
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape) || dialogImage.gameObject.activeSelf) {
+        if (Input.GetKeyDown(KeyCode.Escape) || dialogImage.gameObject.activeSelf || menu.activeSelf) {
             if (!Cursor.visible || dialogImage.gameObject.activeSelf) {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
