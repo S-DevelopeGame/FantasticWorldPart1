@@ -1618,6 +1618,7 @@ GameObject:
   - component: {fileID: 245254392}
   - component: {fileID: 245254391}
   - component: {fileID: 245254390}
+  - component: {fileID: 245254393}
   m_Layer: 0
   m_Name: OptionsGamePlay
   m_TagString: Untagged
@@ -1754,6 +1755,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &245254393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245254389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e940fa739acbc4d8af89f6070165a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &252272777
 GameObject:
   m_ObjectHideFlags: 0
@@ -3910,6 +3923,7 @@ GameObject:
   - component: {fileID: 536891800}
   - component: {fileID: 536891799}
   - component: {fileID: 536891798}
+  - component: {fileID: 536891803}
   m_Layer: 5
   m_Name: CanvasMenu
   m_TagString: Untagged
@@ -4010,6 +4024,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &536891803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536891797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e940fa739acbc4d8af89f6070165a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &543163474
 GameObject:
   m_ObjectHideFlags: 0
@@ -7895,10 +7921,10 @@ RectTransform:
   m_Father: {fileID: 1929855267}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -372.19638, y: -231.3456}
-  m_SizeDelta: {x: 155.6072, y: 137.3088}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 77.80362, y: 68.6544}
+  m_SizeDelta: {x: 155.60718, y: 137.3088}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1338484948
 MonoBehaviour:
@@ -11212,7 +11238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f100cc622a073054fa3ec6a29337a038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogImage: {fileID: 1208048278}
+  dialogImage1: {fileID: 0}
+  dialogImage2: {fileID: 0}
   menu: {fileID: 595409064}
 --- !u!114 &2015327740
 MonoBehaviour:

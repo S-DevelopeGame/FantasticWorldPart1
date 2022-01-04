@@ -29,7 +29,7 @@ public class ChildThrowObjects : MonoBehaviour
                 transform.position.z + Random.Range(-maxXDistance, +maxXDistance));
             if(this.enabled)
             {
-                GameObject newObject = Instantiate(prefabToSpawn[Random.Range(0, 4)].gameObject, positionOfSpawnedObject, Quaternion.identity);
+                GameObject newObject = Instantiate(prefabToSpawn[Random.Range(0, prefabToSpawn.Length)].gameObject, positionOfSpawnedObject, Quaternion.identity);
                 newObject.transform.parent = objectsOfLevel;
             }
             

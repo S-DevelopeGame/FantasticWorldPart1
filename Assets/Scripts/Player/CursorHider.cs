@@ -7,23 +7,38 @@ using UnityEngine.UI;
  */
 public class CursorHider : MonoBehaviour {
 
-    [SerializeField] private Image dialogImage;
-    [SerializeField] private GameObject menu;
+    [SerializeField] private Image dialogImage1;
+    [SerializeField] private Image dialogImage2;
+
+    private bool flag;
     void Start() {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        menu = GameObject.Find("MenuGamePlay").gameObject;
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape) || dialogImage.gameObject.activeSelf || menu.activeSelf) {
-            if (!Cursor.visible || dialogImage.gameObject.activeSelf) {
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-            } else {
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-            }
+
+
+        if (flag && Cursor.visible && !dialogImage1.gameObject.activeSelf && !OptionsGame.menuIsActive && !dialogImage2.gameObject.activeSelf)
+        {
+            Debug.Log("Quit");
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            flag = false;
+            Debug.Log("Quittttttttttttttttttttttttttttt");
         }
+
+        if (!flag && (OptionsGame.menuIsActive || dialogImage1.gameObject.activeSelf || dialogImage2.gameObject.activeSelf))
+        {
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            flag = true;
+            Debug.Log("Innnnnnnnnnnnnnnnnnnnn");
+
+
+        }
+
+
     }
 }

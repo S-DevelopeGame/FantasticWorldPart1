@@ -2880,7 +2880,7 @@ RectTransform:
   - {fileID: 1972083218}
   - {fileID: 556677880}
   m_Father: {fileID: 1929855267}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3262,7 +3262,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1929855267}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4630,7 +4630,7 @@ RectTransform:
   - {fileID: 1342585122}
   - {fileID: 1761906634}
   m_Father: {fileID: 1929855267}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -5349,7 +5349,7 @@ RectTransform:
   m_Children:
   - {fileID: 518397100}
   m_Father: {fileID: 1929855267}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -5767,12 +5767,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1929855267}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -372.19635, y: -231.3456}
-  m_SizeDelta: {x: 155.6072, y: 137.3088}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 77.80365, y: 68.6544}
+  m_SizeDelta: {x: 155.60718, y: 137.3088}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1464242446
 MonoBehaviour:
@@ -7009,7 +7009,7 @@ RectTransform:
   m_Children:
   - {fileID: 724297743}
   m_Father: {fileID: 1929855267}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -7483,12 +7483,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1464242445}
   - {fileID: 701408463}
   - {fileID: 1208048277}
   - {fileID: 1821516265}
   - {fileID: 1342931354}
   - {fileID: 624660456}
-  - {fileID: 1464242445}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7829,7 +7829,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f100cc622a073054fa3ec6a29337a038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogImage: {fileID: 0}
+  dialogImage1: {fileID: 0}
+  dialogImage2: {fileID: 0}
   menu: {fileID: 0}
 --- !u!114 &2015327740
 MonoBehaviour:

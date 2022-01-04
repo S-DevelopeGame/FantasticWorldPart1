@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MenuGamePlay : MonoBehaviour
 {
     [SerializeField] private GameObject menu;
-
+    
 
 
     public void continueGame()
@@ -19,6 +19,8 @@ public class MenuGamePlay : MonoBehaviour
     public void menuGame()
     {
         SceneManager.LoadScene("MainMenu");
+        menu.gameObject.SetActive(false);
+        OptionsGame.menuIsActive = false;
     }
 
     public void exitGame()

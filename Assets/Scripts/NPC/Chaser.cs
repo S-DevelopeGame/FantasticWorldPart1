@@ -22,6 +22,8 @@ public class Chaser : MonoBehaviour
 
     [SerializeField] private Target[] targets;
 
+    [SerializeField] private Transform targetFolder = null;
+
     [SerializeField] private Target t;
 
     [SerializeField] private Image dialogImage1;
@@ -36,6 +38,13 @@ public class Chaser : MonoBehaviour
 
     [SerializeField] private float runSpeed;
     private const float EPSILON = 0.1f;
+
+    private void Awake()
+    {
+        Debug.Log("Found " + targets.Length + " active targets.");
+        targets = targetFolder.GetComponentsInChildren<Target>(false);
+        Debug.Log("Found " + targets.Length + " active targets.");
+    }
 
     private void Start()
     {

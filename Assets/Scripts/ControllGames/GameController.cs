@@ -35,6 +35,12 @@ public class GameController : MonoBehaviour
         }
     }
 
+
+    public void moveFirstLevel()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
     public void moveTutorialScene()
     {
         SceneManager.LoadScene(tutorialScene);
