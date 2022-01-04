@@ -167,10 +167,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
             //audioManager.jump();
         }
 
-        if (!m_jumpInput && Input.GetKey(KeyCode.Z))
-        {
-            m_animator.SetBool("PickUp", true);
-        }
+
     }
 
     private void FixedUpdate()
@@ -206,17 +203,9 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         float h = Input.GetAxis("Horizontal");
 
-        bool walk = Input.GetKey(KeyCode.LeftShift);
+        
 
-        if (v < 0)
-        {
-            if (walk) { v *= m_backwardsWalkScale; }
-            else { v *= m_backwardRunScale; }
-        }
-        else if (walk)
-        {
-            v *= m_walkScale;
-        }
+
 
         
 

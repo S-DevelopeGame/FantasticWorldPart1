@@ -20,7 +20,7 @@ public class TakeObject : MonoBehaviour
     private int score = 0; // score of the player
     private GameObject onHand;
     //[SerializeField] private string type;
-
+    [SerializeField] private TextMeshProUGUI textWrongBin; 
     private void Start()
     {
         recycleBinManager = new RecycleBinManager();
@@ -95,6 +95,8 @@ public class TakeObject : MonoBehaviour
                 {
                     recycleBins[i].setOpen(false);
                 }
+                
+                StartCoroutine(failBin());
             }
 
             //recycleBinManager.setOpenRecyclebin(null);
@@ -103,6 +105,14 @@ public class TakeObject : MonoBehaviour
             
 
         }
+    }
+
+
+    private IEnumerator failBin()
+    {
+        textWrongBin.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
+        textWrongBin.gameObject.SetActive(false);
     }
 
     private void addPoint()
