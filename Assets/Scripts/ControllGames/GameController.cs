@@ -21,6 +21,11 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(worldScene);
     }
 
+    public void moveMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void moveExitGame()
     {
         Application.Quit();

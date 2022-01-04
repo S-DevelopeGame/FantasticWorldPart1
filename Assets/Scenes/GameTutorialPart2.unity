@@ -10101,14 +10101,17 @@ MonoBehaviour:
   messages:
   - Welcome to Fantastic Game World, Use the bins to recycle and clean the park of
     debris
-  - A - left, S - down, D - right, W - up. or arrows
+  - A - left, S - down, D - right, W - up, or arrows.<br>Space - jump, Shift - run
   - 'recyclebin: brown - organic, blue - paper and carton, orange - plastic, purple
     - glass'
+  - press Escape for get to the settings.<br>change volume, sensitivity or back to
+    menu
   - Follow the arrow and you will learn how to play the game
   titles:
   - Welcome User
   - Movement
   - RecycleBin
+  - Settings
   - Follow arrow
   textScene: {fileID: 0}
 --- !u!1 &1832310336
@@ -11151,8 +11154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f100cc622a073054fa3ec6a29337a038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogImage: {fileID: 0}
-  menu: {fileID: 0}
+  dialogImage1: {fileID: 0}
+  dialogImage2: {fileID: 0}
 --- !u!114 &2015327740
 MonoBehaviour:
   m_ObjectHideFlags: 0

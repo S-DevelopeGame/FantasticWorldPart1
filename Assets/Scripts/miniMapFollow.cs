@@ -16,6 +16,12 @@ public class miniMapFollow : MonoBehaviour
     [SerializeField] private float zLimitMin;
     [SerializeField] private float zLimitMax;
     [SerializeField] private float xLimitMax;
+
+    [SerializeField] private GameObject block1;
+    [SerializeField] private GameObject block2;
+    [SerializeField] private GameObject block3;
+    [SerializeField] private GameObject block4;
+    private bool flag;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +32,13 @@ public class miniMapFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Player.transform.position.x > xLimitMin || Player.transform.position.z > zLimitMin || Player.transform.position.z < zLimitMax)
-            transform.position = Player.transform.position + offSet;
+        //this.transform.position.z > block1.transform.position.z + 38
+
+                transform.position = Player.transform.position + offSet;
+
+            
+
+        
+        
     }
 }
