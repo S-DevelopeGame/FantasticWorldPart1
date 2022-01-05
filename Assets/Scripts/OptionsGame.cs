@@ -34,6 +34,7 @@ public class OptionsGame : MonoBehaviour
         sliderSensitivity.value = sensativity;
         setSensativity();
         setVolume();
+        /*
         if (GameObject.Find("OptionsGamePlay") && GameObject.Find("OptionsGameObject"))
         {
             sliderSensitivity.value = GameObject.Find("OptionsGameObject").GetComponent<OptionsGame>().getSensativity();
@@ -41,6 +42,7 @@ public class OptionsGame : MonoBehaviour
 
             Destroy(GameObject.Find("OptionsGameObject"));
         }
+        */
     }
 
     private void setSensativity()
