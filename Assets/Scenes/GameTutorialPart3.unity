@@ -7263,7 +7263,7 @@ MonoBehaviour:
   message: {fileID: 1324582352}
   messages:
   - Welcome to Fantastic Game World,<br>Use the bins to recycle and clean the park
-  - A - left, S - down, D - right, W - up, or arrows.<br>Space - jump, Shift - run
+  - A - left, S - down, D - right, W - up, or arrows.<br>Space - jump.
   - 'recyclebin: brown - organic, blue - paper and carton,<br>orange - plastic, purple
     - glass'
   - press Escape for get to the settings.<br>change volume, sensitivity or back to

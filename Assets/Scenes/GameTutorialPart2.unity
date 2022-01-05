@@ -3035,10 +3035,10 @@ RectTransform:
   m_Father: {fileID: 1929855267}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -372.19635, y: -231.3456}
-  m_SizeDelta: {x: 155.6072, y: 137.3088}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 77.80365, y: 68.6544}
+  m_SizeDelta: {x: 155.60718, y: 137.3088}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &432765686
 MonoBehaviour:
@@ -10235,7 +10235,7 @@ MonoBehaviour:
   messages:
   - Welcome to Fantastic Game World, Use the bins to recycle and clean the park of
     debris
-  - A - left, S - down, D - right, W - up, or arrows.<br>Space - jump, Shift - run
+  - A - left, S - down, D - right, W - up, or arrows.<br>Space - jump.
   - 'recyclebin: brown - organic, blue - paper and carton, orange - plastic, purple
     - glass'
   - press Escape for get to the settings.<br>change volume, sensitivity or back to

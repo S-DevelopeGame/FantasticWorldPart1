@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Glass
-  imageObject: {fileID: 21300000, guid: 8fcc6ccf4b19bc44cab37efbdf7578ca, type: 3}
+  imageObject: {fileID: 21300000, guid: 6e0e7f8526ae3f1449ec8bfa4fe44989, type: 3}
 --- !u!1 &745875965081382098
 GameObject:
   m_ObjectHideFlags: 0
